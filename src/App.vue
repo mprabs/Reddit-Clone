@@ -1,28 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <Header />
+    <div class="body">
+      <div class="body__left">
+        <SubmitPost />
+        <FilterTags />
+        <Posts />
+        <Posts />
+      </div>
+      <div class="body__right">
+        <TopGrowingCard />
+        <Ads />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import Header from "./components/header"
+import SubmitPost from "./components/postCard"
+import FilterTags from "./components/filterTags"
+import Posts from "./components/posts"
+import TopGrowingCard from "./components/topGrowing"
+import Ads from "./components/ad"
 export default {
   name: "App",
   components: {
-    HelloWorld
+    Header,
+    SubmitPost,
+    FilterTags,
+    Posts,
+    TopGrowingCard,
+    Ads
   }
 };
 </script>
 
 <style>
+@import './assets/css/app.css';
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family:Verdana, Arial, Helvetica, sans-serif ;
 }
+
+
 </style>

@@ -1,0 +1,16 @@
+.body {
+    margin-top: 10vh;
+    display: grid;
+    height: auto;
+    justify-content: center;
+    grid-template-columns: 600px 320px;
+    gap: 25px;
+}
+
+.body__left {
+    height: auto;
+}
+
+.body__right {
+    height: auto;
+}

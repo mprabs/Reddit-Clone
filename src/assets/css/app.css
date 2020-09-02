@@ -5,8 +5,6 @@
     justify-content: center;
     grid-template-columns: 620px 320px;
     gap: 25px;
-    padding: 0;
-    box-sizing: border-box;
     background-color: #DAE0E6;
 }
 

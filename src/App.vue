@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <Header />
-    <div class="body">
+    <Header @gotohome="page = 'Home'" />
+    <div v-if="page == 'Home'" class="home__body">
       <div class="body__left">
-        <SubmitPost />
+        <CreatePost @change="page = 'Submit'" />
         <FilterTags :tags="tags" />
         <Posts />
         <Posts />
@@ -13,19 +13,28 @@
         <Ads />
       </div>
     </div>
+    <div v-else-if="page == 'Submit'">
+      <SubmitPost />
+    </div>
   </div>
 </template>
 
 <script>
+import states from "./assets/data.json";
 import Header from "./components/header"
-import SubmitPost from "./components/postCard"
+import CreatePost from "./components/postCard"
 import FilterTags from "./components/filterTags"
 import Posts from "./components/posts"
 import TopGrowingCard from "./components/topGrowing"
 import Ads from "./components/ad"
-import states from "./assets/data.json";
+import SubmitPost from "./components/submitPost/submitPost"
 export default {
   name: "App",
+  data() {
+    return {
+      page: "Home"
+    }
+  },
   computed: {
     tags() {
       return states.tags.map((item) => {
@@ -35,11 +44,12 @@ export default {
   },
   components: {
     Header,
-    SubmitPost,
+    CreatePost,
     FilterTags,
     Posts,
     TopGrowingCard,
-    Ads
+    Ads,
+    SubmitPost
   }
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
     <div class="post__card">
         <img src="../assets/img/profile-avatar.png" alt="">
-        <input type="text" placeholder="Create Post">
+        <input @click="$emit('change')" type="text" placeholder="Create Post">
         <i class="fas fa-image"></i>
         <i class="fas fa-link"></i>
     </div>

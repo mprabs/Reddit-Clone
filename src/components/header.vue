@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-      <div class="header__logo">
+      <div class="header__logo" @click="goToHome()">
           <img src="../assets/img/reddit-logo.png" alt=""> 
           <span>reddit</span>
       </div>
@@ -52,7 +52,11 @@
 
 <script>
 export default {
-
+    methods: {
+        goToHome() {
+            this.$emit('goToHome', true);
+        }
+    }
 }
 </script>
 
@@ -76,6 +80,7 @@ export default {
         width: 120px;
         justify-content: space-evenly;
         color: #1C1C1C;
+        cursor: pointer;
     }
 
     .header__logo span {

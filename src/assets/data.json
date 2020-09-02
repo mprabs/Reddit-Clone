@@ -2,28 +2,23 @@
     "tags": [
         {
             "name": "Best",
-            "icon": "fas fa-rocket",
-            "selected" : true
+            "icon": "fas fa-rocket"
         },
         {
             "name": "Hot",
-            "icon": "fas fa-burn",
-            "selected" : false
+            "icon": "fas fa-burn"
         },
         {
             "name": "New",
-            "icon": "fas fa-certificate",
-            "selected" : false
+            "icon": "fas fa-certificate"
         },
         {
             "name": "Top",
-            "icon": "fas fa-chart-bar",
-            "selected" : false
+            "icon": "fas fa-chart-bar"
         },
         {
             "name": "Rising",
-            "icon": "fas fa-chart-line",
-            "selected" : false
+            "icon": "fas fa-chart-line"
         }
     ]
   }

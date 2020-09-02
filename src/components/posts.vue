@@ -1,16 +1,20 @@
 <template>
   <div class="post">
       <div class="left__vote__icons">
-            <i :class="`fas fa-arrow-up ${upVoted?'red':''}`" @click="increaseVoteCount()"></i>
-            <span :class="`vote__count ${ upVoted?'red': downVoted?'blue':'' }`">{{ voteCount || VOTE_COUNT }}</span>
-            <i :class="`fas fa-arrow-down ${downVoted?'blue':''}`" @click="decreaseVoteCount()"></i>
+            <i :class="`fas fa-arrow-alt-up ${ upVoted ? 'red' : '' }`" @click="increaseVoteCount()"></i>
+
+            <span :class="`vote__count ${ upVoted ? 'red' : downVoted ? 'blue' : '' }`">
+                {{ voteCount || VOTE_COUNT }}
+            </span>
+
+            <i :class="`fas fa-arrow-alt-down ${downVoted ? 'blue' : '' }`" @click="decreaseVoteCount()"></i>
       </div>
       <div class="post__content">
           <div class="post__head">
             <img src="../assets/img/profile-avatar.png" alt="">
             <span class="user__name"><strong>r/prabin</strong> </span>
             <div class="post__details">
-                • Posted by Prabin 3 hours ago
+               <p>• Posted by Prabin 3 hours ago</p> 
             </div>
           </div>
           <div class="post__body">
@@ -97,12 +101,13 @@ export default {
     display: flex;
     border-radius: 5px;
     padding: 1px;
+    width: 100%;
+    overflow-y: scroll;
+    border: 1px solid #d3d1d1;
 }
 
 .post:hover {
-    padding: 0px;
-    border: 1px solid black;
-    border-radius: 0px;
+    border: 1px solid rgb(153, 152, 152);
 }
 
 .left__vote__icons {
@@ -122,6 +127,7 @@ export default {
 .left__vote__icons span {
     margin: 5px 0;
     font-size: 12px;
+    font-weight: bold;
 }
 
 .red {
@@ -199,9 +205,19 @@ export default {
     margin-right: 5px;
 }
 
-.fa-arrow-up, .fa-arrow-down {
+.fa-arrow-alt-up, .fa-arrow-alt-down {
     cursor: pointer;
     font-weight: bold;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #909499;
 }
 
 </style>

@@ -88,6 +88,10 @@ export default {
         border-radius: 15px;
     }
 
+    .input__section .input__section__left span {
+        margin: 0 5px;
+    }
+
     .input__section, .search__bar input {
         margin-right: 10px;
         border: none;
@@ -100,6 +104,7 @@ export default {
         display: flex;
         font-size: 13px;
         align-items: center;
+        flex-shrink: 1;
         justify-content: space-between;
     }
     .fa-igloo {
@@ -110,6 +115,7 @@ export default {
         display: flex;
         align-items: center;
         flex: 0.4;
+        margin: 0 10px;
         justify-content: space-evenly;
     }
 
@@ -119,16 +125,20 @@ export default {
         border-radius: 5px;
         margin: 0 10px;
         display: flex;
-        align-items: center;       
+        align-items: center;
         border: 1px solid #e7e7e7;
+        flex: 1;
+        min-width: 80px;
     }
 
     .search__bar input {
+        min-width: 60px;
         height: 5vh;
         margin-left: 10px;
         background-color: #f8f8f8;
         padding: -10px;
         font-size: 13px;
+        width: 280px;
     }
 
     .search__bar input:focus {
@@ -163,6 +173,7 @@ export default {
         padding: 5px 10px;
         border-radius: 20px;
         width: 90px;
+        flex-shrink: 0;
     }
 
     .get__coins span {
@@ -208,5 +219,45 @@ export default {
         width: 80px;
         justify-content: space-between;
         align-items: center;
+    }
+
+    @media screen and (max-width:1000px) {
+    .profile__select .profile__details .user__profile {
+        display: none;
+    }
+    }
+
+    @media screen and (max-width:900px) {
+        .icons__left {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width:600px) {
+        .get__coins {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width:500px) {
+        .input__section .input__section__left span, .input__section > i {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width:460px) {
+        .header .header__logo span {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width:380px) {
+        .icons__right {
+            display: none;
+        }
+
+        .input__section .input__section__left span, .input__section > i {
+            display: block;
+        }
     }
 </style>

@@ -1,11 +1,11 @@
 <template>
   <div class="filter__tags">
-      <div class="tag__items" v-for="tag in tags" :key="tag">
-        <div :class="getClass(tag.name)"  @click="selected = tag.name">
+    <div class="tag__items">
+        <div v-for="tag in tags" :key="tag" :class="getClass(tag.name)"  @click="selected = tag.name">
             <i :class="tag.icon"></i>
             <span> {{ tag.name }}</span>
         </div>
-      </div>
+    </div>
     <div class="filter__right__tags">
         <i class="fas fa-bars"></i>
         <i class="fas fa-sort-down"></i>
@@ -17,7 +17,7 @@
 export default {
     data() {
         return {
-            selected: ""
+            selected: "Best"
         }
     },
     props: ['tags'],
@@ -39,14 +39,18 @@ export default {
         background-color: white;
         display: flex;
         padding: 2vh;
+        border: 1px solid #d3d1d1;
         border-radius: 5px;
         justify-content: space-between;
+        flex-wrap: wrap;
+        overflow: hidden;
     }
 
     .tag__items {
         display: flex;
         flex: 0.7;
         align-items: center;
+        flex-wrap: nowrap;
         justify-content: space-evenly;
         font-size: 13px;
     }
@@ -83,4 +87,16 @@ export default {
         margin: 0 5px;
         color: #0079D3;
     }
+
+    @media screen and (max-width: 650px) {
+        .tag__items {
+            flex: 1;
+            justify-content: space-between;
+        }
+
+        .filter__right__tags {
+            display: none;
+        }
+    }
+
 </style>

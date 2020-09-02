@@ -19,12 +19,15 @@ export default {
     background-color: white;
     display: flex;
     align-items: center;
+    border: 1px solid #d3d1d1;
     padding: 2vh;
     border-radius: 5px;
+    overflow: hidden;
 }
 
 .post__card input {
     flex: 1;
+    min-width: 30px;
     padding: 0 10px;
     height: 6vh;
     border: 1px solid #abacad;
@@ -50,5 +53,6 @@ export default {
     width: 40px;
     border-radius: 20px;
 }
+
 
 </style>

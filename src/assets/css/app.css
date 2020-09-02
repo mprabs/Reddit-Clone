@@ -3,8 +3,11 @@
     display: grid;
     height: auto;
     justify-content: center;
-    grid-template-columns: 600px 320px;
+    grid-template-columns: 620px 320px;
     gap: 25px;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #DAE0E6;
 }
 
 .body__left {
@@ -13,4 +16,22 @@
 
 .body__right {
     height: auto;
+}
+
+@media screen and (max-width:1000px) {
+    .body {
+        grid-template-columns: repeat(auto-fit, minmax(620px, 0.7fr));
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .body {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 0.7fr));
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .body {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
 }

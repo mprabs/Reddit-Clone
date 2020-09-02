@@ -44,6 +44,7 @@ export default {
     gap: 20px;
     flex-direction: row;
     justify-content: center;
+    background-color: #DAE0E6;
 }
 
 .submit__post .left__body {

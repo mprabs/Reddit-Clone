@@ -1,6 +1,6 @@
 # reddit-clone
 
-[DEMO](https://e8nlj.csb.app/)
+[DEMO](https://udyzv.csb.app/)
 
 ## Project setup
 ```

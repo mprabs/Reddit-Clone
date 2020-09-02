@@ -1,9 +1,9 @@
 <template>
   <div class="post">
       <div class="left__vote__icons">
-            <i class="fas fa-arrow-up"></i>
-            <span class="vote__count">15</span>
-            <i class="fas fa-arrow-down"></i>
+            <i :class="`fas fa-arrow-up ${upVoted?'red':''}`" @click="increaseVoteCount()"></i>
+            <span :class="`vote__count ${ upVoted?'red': downVoted?'blue':'' }`">{{ voteCount || VOTE_COUNT }}</span>
+            <i :class="`fas fa-arrow-down ${downVoted?'blue':''}`" @click="decreaseVoteCount()"></i>
       </div>
       <div class="post__content">
           <div class="post__head">
@@ -47,8 +47,45 @@
 </template>
 
 <script>
+export const VOTE_COUNT = 15;
 export default {
-
+    data() {
+        return {
+            VOTE_COUNT,
+            voteCount: "",
+            upVoted: false,
+            downVoted: false
+        }
+    },
+    methods: {
+        increaseVoteCount() {
+            if(this.upVoted) {
+                this.voteCount = ""
+                return;
+            }
+            this.voteCount = VOTE_COUNT + 1;
+        },
+        decreaseVoteCount() {
+            if(this.downVoted) {
+                this.voteCount = ""
+                return;
+            }
+            this.voteCount = VOTE_COUNT - 1;
+        }
+     },
+     watch: {
+         voteCount() {
+             if(this.voteCount == this.VOTE_COUNT - 1) {
+                 this.upVoted = false
+                 this.downVoted = true
+             } else if (this.voteCount == this.VOTE_COUNT + 1) {
+                 this.downVoted = false
+                 this.upVoted = true
+             } else {
+                 this.downVoted = this.upVoted = false
+             }
+         },
+     }
 }
 </script>
 
@@ -85,6 +122,14 @@ export default {
 .left__vote__icons span {
     margin: 5px 0;
     font-size: 12px;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
 }
 
 .post__content {
@@ -152,6 +197,11 @@ export default {
 }
 .post__item i {
     margin-right: 5px;
+}
+
+.fa-arrow-up, .fa-arrow-down {
+    cursor: pointer;
+    font-weight: bold;
 }
 
 </style>

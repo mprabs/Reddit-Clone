@@ -4,7 +4,7 @@
     <div class="body">
       <div class="body__left">
         <SubmitPost />
-        <FilterTags />
+        <FilterTags :tags="tags" />
         <Posts />
         <Posts />
       </div>
@@ -23,8 +23,16 @@ import FilterTags from "./components/filterTags"
 import Posts from "./components/posts"
 import TopGrowingCard from "./components/topGrowing"
 import Ads from "./components/ad"
+import states from "./assets/data.json";
 export default {
   name: "App",
+  computed: {
+    tags() {
+      return states.tags.map((item) => {
+        return item;
+      })
+    }
+  },
   components: {
     Header,
     SubmitPost,

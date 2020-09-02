@@ -1,0 +1,29 @@
+{
+    "tags": [
+        {
+            "name": "Best",
+            "icon": "fas fa-rocket",
+            "selected" : true
+        },
+        {
+            "name": "Hot",
+            "icon": "fas fa-burn",
+            "selected" : false
+        },
+        {
+            "name": "New",
+            "icon": "fas fa-certificate",
+            "selected" : false
+        },
+        {
+            "name": "Top",
+            "icon": "fas fa-chart-bar",
+            "selected" : false
+        },
+        {
+            "name": "Rising",
+            "icon": "fas fa-chart-line",
+            "selected" : false
+        }
+    ]
+  }

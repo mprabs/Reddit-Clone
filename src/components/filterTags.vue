@@ -1,25 +1,9 @@
 <template>
   <div class="filter__tags">
-      <div class="tag__items">
-        <div class="tag__item  tag__item__active">
-            <i class="fas fa-rocket"></i>
-            <span> Best</span>
-        </div>
-        <div class="tag__item">
-            <i class="fas fa-burn"></i>
-            <span> Hot</span>
-        </div>
-        <div class="tag__item">
-            <i class="fas fa-certificate"></i>
-            <span> New</span>
-        </div>
-        <div class="tag__item">
-            <i class="fas fa-chart-bar"></i>
-            <span> Top</span>
-        </div>
-        <div class="tag__item">
-            <i class="fas fa-chart-line"></i>
-            <span> Rising</span>
+      <div class="tag__items" v-for="tag in tags" :key="tag">
+        <div :class="getClass(tag.name)"  @click="selected = tag.name">
+            <i :class="tag.icon"></i>
+            <span> {{ tag.name }}</span>
         </div>
       </div>
     <div class="filter__right__tags">
@@ -31,7 +15,20 @@
 
 <script>
 export default {
-
+    data() {
+        return {
+            selected: ""
+        }
+    },
+    props: ['tags'],
+    methods: {
+        getClass(val) {
+            const classActive = "tag__item  tag__item__active"
+            const classInactive = "tag__item"
+            var result = val === this.selected ? classActive : classInactive
+            return result;
+        }
+    }
 }
 </script>
 
